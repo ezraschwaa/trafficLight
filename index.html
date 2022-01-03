@@ -1,56 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset = "UTF-8">
-	<link rel = "stylesheet" href = "./style.css">
+	<head>
+		<meta charset = "UTF-8">
+		<link rel = "stylesheet" href = "./style.css">
 
-	<title>Traffic Light</title>
-</head>
+		<title>Traffic Light</title>
+	</head>
 
-<body>
-	<div class = 'header'>
-		<h>Traffic Light Simulator</h>
-	</div>
+	<body>
+		<div class = 'header'>
+			<h>Traffic Light Simulator</h>
+		</div>
 
-	<div class = 'title-row'>
-		<p class = 'task-title'>
-			Task
-		</p>
-	</div>
+		<div class = 'title-row'>
+			<p class = 'task-title'>
+				Task
+			</p>
+		</div>
 
-	<table class = 'instructions-row'>
-		<tr>
-			<td class = 'instructions-number'>
-				1
-			</td>>
-			<td class = 'instructions-text'>
-				Produce a traffic light in HTML and CSS with all of its lights off initially
-			</td>
-		</tr>
-		<tr>
-			<td class = 'instructions-number'>
-				2
-			</td>>
-			<td class = 'instructions-text'>
-				Create a button that will cause one of the lights to randomly light up.
-			</td>
-		</tr>
-		<tr>
-			<td class = 'instructions-number'>
-				3
-			</td>>
-			<td class = 'instructions-text'>
-				Make sure the new light that is turned on is not the one that was previously lit.
-			</td>
-		</tr>
+		<table class = 'instructions-row'>
+			<tr>
+				<td class = 'instructions-number'>
+					1
+				</td>>
+				<td class = 'instructions-text'>
+					Produce a traffic light in HTML and CSS with all of its lights off initially
+				</td>
+			</tr>
+			<tr>
+				<td class = 'instructions-number'>
+					2
+				</td>>
+				<td class = 'instructions-text'>
+					Create a button that will cause one of the lights to randomly light up.
+				</td>
+			</tr>
+			<tr>
+				<td class = 'instructions-number'>
+					3
+				</td>>
+				<td class = 'instructions-text'>
+					Make sure the new light that is turned on is not the one that was previously lit.
+				</td>
+			</tr>
 
-	<div class = "trafficBox">
-		<div class="circle" id = "top"></div>
-		<div class="circle" id = "middle"></div>
-		<div class="circle" id = "bottom"></div>
-	</div>
+		<div class = "trafficBox">
+			<div class="circle" id = "top"></div>
+			<div class="circle" id = "middle"></div>
+			<div class="circle" id = "bottom"></div>
+		</div>
 
-</body>
+		<div id = 'lightButton' class = 'lightButton'>
+	      Turn on the Lights!
+	  </div>
+	  
+	  <script type = 'text/javascript' src = './main.js'></script>
+
+	</body>
 
 </html>
