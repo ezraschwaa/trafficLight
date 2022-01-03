@@ -42,7 +42,7 @@ let lightRandomCircle = () => {
 		last_circle = bottom_circle;
 	} else {
 		//If we've gotten here, the num is current circle.
-		lightRandomCircle();
+		console.log(randomNum)
 	}
 }
 
