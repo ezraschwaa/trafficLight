@@ -12,10 +12,9 @@ const numOfCircles = circles.length;
 const lightRandomCircle = () => {
 	let randomNum;
 
-	randomNum = getRandomNum();
-	while(randomNum === last_num){
+	do{
 		randomNum = getRandomNum();
-	}
+	}while(randomNum === last_num);
 	last_num = randomNum;
 
 	//Switch case to change light and reset others to default settings
