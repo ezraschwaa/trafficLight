@@ -1,3 +1,6 @@
+//Code by Ezra
+
+//Initialize and declare variables for traffic lights
 let top_circle = document.getElementById('top');
 let middle_circle = document.getElementById('middle');
 let bottom_circle = document.getElementById('bottom');
@@ -7,6 +10,10 @@ let last_num = 3;
 
 let light_button = document.getElementById('lightButton');
 const numOfCircles = circles.length;
+
+//Initiatlize variables for displaying and hiding instructions
+let instructions = document.getElementById('instructions-column');
+let toggleButton = document.getElementById('toggle');
 
 //Event handler function for light button click event
 const lightRandomCircle = () => {
@@ -44,3 +51,18 @@ const lightRandomCircle = () => {
 const getRandomNum = () => Math.floor(Math.random()*numOfCircles);
 
 lightButton.onclick = lightRandomCircle;
+
+//Add event handler and listener for instruction button
+const hideInstructions = () => {
+	if (instructions.hidden === true){
+		instructions.hidden = false;
+		toggleButton.innerHTML = 'visibility_off';
+	} else {
+		instructions.hidden = true;
+		toggleButton.innerHTML = 'visibility';
+	}
+}
+
+toggleButton.onclick = hideInstructions;
+
+

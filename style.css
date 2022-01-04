@@ -3,6 +3,9 @@ body{
 	text-align: center;
 	font-family: 'Ubuntu', 'Monaco', sans-serif;
 	background-image: linear-gradient(45deg, #51A1A8, #F5B98E);
+	height: 100vh;
+	margin: 0;
+	padding: 0;
 }
 
 .header{
@@ -17,12 +20,24 @@ body{
 	background-color: #8EECF5;
 }
 
-.title-row{
-	font-size: 30px;
+.task-title{
+	font-size: 24px;
 	color: black;
+	display:inline;
 }
 
-.instructions-row{
+.task-row {
+	margin-top: 30px;
+	user-select: none;
+}
+
+.material-icons{
+	font-size: 36px;
+	cursor:pointer;
+	color:white;
+}
+
+.instructions-column{
 	margin: 0 auto;
 	padding: 10px;
 	text-align: left;
