@@ -4,26 +4,21 @@ let bottom_circle = document.getElementById('bottom');
 
 const circles = ['top','middle','bottom']
 let last_num = 3;
-let last_circle = top_circle;
-
 
 let light_button = document.getElementById('lightButton');
-const numOfCircles = 3;
+const numOfCircles = circles.length;
 
-
-
+//Event handler function for light button click event
 const lightRandomCircle = () => {
 	let randomNum;
 
 	randomNum = getRandomNum();
 	while(randomNum === last_num){
-		console.log("We gotta repeat!")
 		randomNum = getRandomNum();
 	}
 	last_num = randomNum;
 
-	console.log(randomNum);
-	//easier if i made circles an array?
+	//Switch case to change light and reset others to default settings
 	switch (randomNum) {
 		case 0:
 			top_circle.style.backgroundColor = 'red';
@@ -46,8 +41,7 @@ const lightRandomCircle = () => {
 	}
 }
 
-const getRandomNum = () => {
-	return randomNum = Math.floor(Math.random()*numOfCircles);
-}
+//Returns random number between 0 and max circles
+const getRandomNum = () => Math.floor(Math.random()*numOfCircles);
 
 lightButton.onclick = lightRandomCircle;
