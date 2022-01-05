@@ -4,12 +4,13 @@
 let top_circle = document.getElementById('top');
 let middle_circle = document.getElementById('middle');
 let bottom_circle = document.getElementById('bottom');
-
 const circles = [top_circle, middle_circle, bottom_circle]
+const numOfCircles = circles.length;
 let last_num = -1;
 
+const BOX_SHADOW_STYLE = '0 0 10px 5px ';
+
 let light_button = document.getElementById('lightButton');
-const numOfCircles = circles.length;
 
 //Initiatlize variables for displaying and hiding instructions
 let instructions = document.getElementById('instructions-column');
@@ -22,6 +23,12 @@ let resetButton = document.getElementById('resetButton');
 const lightRandomCircle = () => {
 	let randomNum;
 
+	//Reset last circle lit if one exists
+	if(last_num !== -1){
+		resetStyle(circles[last_num])
+	}
+
+	//Generate random number and save it
 	do{
 		randomNum = getRandomNum();
 	}while(randomNum === last_num);
@@ -31,17 +38,11 @@ const lightRandomCircle = () => {
 	switch (randomNum) {
 		case 0:
 			addStyle(top_circle, 'red')
-			resetStyle(middle_circle)
-			resetStyle(bottom_circle)
 			break;
 		case 1:
-			resetStyle(top_circle);
 			addStyle(middle_circle, 'yellow');
-			resetStyle(bottom_circle)
 			break;
 		case 2:
-			resetStyle(top_circle)
-			resetStyle(middle_circle)
 			addStyle(bottom_circle, 'green')
 			break;
 		default:
@@ -53,7 +54,7 @@ const lightRandomCircle = () => {
 //Adds style.  Expects circle object and color string.
 const addStyle = (circle, color = '') => {
 	circle.style.backgroundColor = color;
-	circle.style.boxShadow = '0 0 10px 5px '+color;
+	circle.style.boxShadow = BOX_SHADOW_STYLE+color;
 }
 
 //Sets style of given circle to default.
