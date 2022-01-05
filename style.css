@@ -132,6 +132,23 @@ header li a:hover{
 	box-shadow: 2px 2px 3px 1px black;
 }
 
+/** This code is taken from Stack Overflow to prevent users
+from being able to select text on any website.  Link to code is
+below as well as on the footer of the page 
+
+https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting 
+
+**/
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
 /**Footer code**/
 footer{
 	position:absolute;
