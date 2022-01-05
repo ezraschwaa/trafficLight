@@ -6,7 +6,7 @@ let middle_circle = document.getElementById('middle');
 let bottom_circle = document.getElementById('bottom');
 
 const circles = ['top','middle','bottom']
-let last_num = 3;
+let last_num = -1;
 
 let light_button = document.getElementById('lightButton');
 const numOfCircles = circles.length;
@@ -14,6 +14,9 @@ const numOfCircles = circles.length;
 //Initiatlize variables for displaying and hiding instructions
 let instructions = document.getElementById('instructions-column');
 let toggleButton = document.getElementById('toggle');
+
+//Initialize variable for reset button
+let resetButton = document.getElementById('resetButton');
 
 //Event handler function for light button click event
 const lightRandomCircle = () => {
@@ -28,18 +31,27 @@ const lightRandomCircle = () => {
 	switch (randomNum) {
 		case 0:
 			top_circle.style.backgroundColor = 'red';
+			top_circle.style.boxShadow = '0 0 10px 5px red';
 			middle_circle.style.backgroundColor = '';
+			middle_circle.style.boxShadow = '';
 			bottom_circle.style.backgroundColor = '';
+			bottom_circle.style.boxShadow = '';
 			break;
 		case 1:
 			top_circle.style.backgroundColor = '';
+			top_circle.style.boxShadow = '';
 			middle_circle.style.backgroundColor = 'yellow';
+			middle_circle.style.boxShadow = '0 0 10px 5px yellow';
 			bottom_circle.style.backgroundColor = '';
+			bottom_circle.style.boxShadow = '';
 			break;
 		case 2:
 			top_circle.style.backgroundColor = '';
+			top_circle.style.boxShadow = '';
 			middle_circle.style.backgroundColor = '';
+			middle_circle.style.boxShadow = '';
 			bottom_circle.style.backgroundColor = 'green';
+			bottom_circle.style.boxShadow = '0 0 10px 5px green';
 			break;
 		default:
 			console.log("Something went wrong with the randomNum");
@@ -64,5 +76,19 @@ const hideInstructions = () => {
 }
 
 toggleButton.onclick = hideInstructions;
+
+//Add event handler and listener for reset button
+const resetLights = () => {
+	top_circle.style.backgroundColor = '';
+	middle_circle.style.backgroundColor = '';
+	bottom_circle.style.backgroundColor = '';
+
+	top_circle.style.boxShadow = '';
+	middle_circle.style.boxShadow = '';
+	bottom_circle.style.boxShadow = '';
+	last_num = -1
+}
+
+resetButton.onclick = resetLights;
 
 
