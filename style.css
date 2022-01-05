@@ -6,6 +6,7 @@ body{
 	height: 125vh;
 	margin: 0;
 	padding: 0;
+	position:relative;
 }
 
 /**Header stuff**/
@@ -38,12 +39,12 @@ header li a {
 	text-decoration: none;
 }
 
-.header-title{
-	font-family: 'Lobster';
+header li a:hover{
 	color:black;
 }
 
-#earthLight {
+.header-title{
+	font-family: 'Lobster';
 	color:black;
 }
 
@@ -133,9 +134,9 @@ header li a {
 
 /**Footer code**/
 footer{
-	position:fixed;
+	position:absolute;
 	left:0vh;
-	bottom:0vh;
+	bottom:0;
 	width: 100%;
 	height:30px;
 	background-color:#8EECF5;
