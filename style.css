@@ -3,12 +3,12 @@ body{
 	text-align: center;
 	font-family: 'Ubuntu', 'Monaco', sans-serif;
 	background-image: linear-gradient(45deg, #51A1A8, #F5B98E);
-	height: 100vh;
+	height: 125vh;
 	margin: 0;
 	padding: 0;
 }
 
-.header{
+header{
 	width: 100%;
 	height: 50px;
 	color: black;
@@ -18,7 +18,29 @@ body{
 	text-align: left;
 	margin: auto;
 	background-color: #8EECF5;
+	display:flex;
+	box-shadow: 0 0 10px 0 black;
 }
+
+header * {
+	display:inline;
+}
+
+header li {
+	font-size: 18px;
+	margin: 20px;
+	text-align: right;
+}
+
+header li a {
+	color: darkgray;
+	text-decoration: none;
+}
+
+#earthLight {
+	color:black;
+}
+
 
 .task-title{
 	font-size: 24px;
@@ -78,4 +100,17 @@ body{
 	text-align: center;
 	cursor: pointer;
 	user-select: none;
+}
+
+.resetButton{
+	width: 50px;
+	height: 20px;
+	background-color: orange;
+	padding: 5px;
+	border-radius: 10px;
+	font-size: 16px;
+	margin:10px auto;
+	text-align:center;
+	cursor:pointer;
+	user-select:none;
 }
