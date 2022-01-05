@@ -82,14 +82,8 @@ toggleButton.onclick = hideInstructions;
 
 //Add event handler and listener for reset button
 const resetLights = () => {
-	top_circle.style.backgroundColor = '';
-	middle_circle.style.backgroundColor = '';
-	bottom_circle.style.backgroundColor = '';
-
-	top_circle.style.boxShadow = '';
-	middle_circle.style.boxShadow = '';
-	bottom_circle.style.boxShadow = '';
-	last_num = -1
+	circles.forEach(resetStyle);
+	last_num = -1;
 }
 
 resetButton.onclick = resetLights;
