@@ -6,7 +6,7 @@ let middle_circle = document.getElementById('middle');
 let bottom_circle = document.getElementById('bottom');
 
 const circles = ['top','middle','bottom']
-let last_num = 3;
+let last_num = -1;
 
 let light_button = document.getElementById('lightButton');
 const numOfCircles = circles.length;
@@ -14,6 +14,9 @@ const numOfCircles = circles.length;
 //Initiatlize variables for displaying and hiding instructions
 let instructions = document.getElementById('instructions-column');
 let toggleButton = document.getElementById('toggle');
+
+//Initialize variable for reset button
+let resetButton = document.getElementById('resetButton');
 
 //Event handler function for light button click event
 const lightRandomCircle = () => {
@@ -64,5 +67,15 @@ const hideInstructions = () => {
 }
 
 toggleButton.onclick = hideInstructions;
+
+//Add event handler and listener for reset button
+const resetLights = () => {
+	top_circle.style.backgroundColor = '';
+	middle_circle.style.backgroundColor = '';
+	bottom_circle.style.backgroundColor = '';
+	last_num = -1
+}
+
+resetButton.onclick = resetLights;
 
 
