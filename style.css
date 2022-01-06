@@ -54,6 +54,10 @@ header li a:hover{
 	color:black;
 }
 
+.galactic-header{
+	background-color: #94904E;
+}
+
 /**Table and Task-Title styling**/
 .task-title{
 	font-size: 32px;
@@ -157,6 +161,10 @@ header li a:hover{
 
 .adderButton:hover{
 	box-shadow: 2px 2px 3px 1px black;
+}
+
+.newLightsButton{
+	width: 100px;
 }
 
 /** This code is taken from Stack Overflow to prevent users
