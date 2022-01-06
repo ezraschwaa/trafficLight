@@ -1,22 +1,16 @@
 //Code by Ezra
 
 //Initialize and declare variables for traffic lights
-let top_circle = document.getElementById('top');
-let middle_circle = document.getElementById('middle');
-let bottom_circle = document.getElementById('bottom');
-const circles = [top_circle, middle_circle, bottom_circle]
+const circles = document.querySelectorAll(".circle");
+const colors = ['red','yellow','green'];
+const BOX_SHADOW_STYLE = '0 0 10px 5px ';
 const numOfCircles = circles.length;
 let last_num = -1;
 
-const BOX_SHADOW_STYLE = '0 0 10px 5px ';
-
+//Initiatlize variables for buttons
 let light_button = document.getElementById('lightButton');
-
-//Initiatlize variables for displaying and hiding instructions
 let instructions = document.getElementById('instructions-column');
 let toggleButton = document.getElementById('toggle');
-
-//Initialize variable for reset button
 let resetButton = document.getElementById('resetButton');
 
 //Event handler function for light button click event
@@ -26,7 +20,7 @@ const lightRandomCircle = () => {
 	//Reset last circle lit if one exists
 	if(last_num !== -1){
 		resetStyle(circles[last_num])
-	}
+	};
 
 	//Generate random number and save it
 	do{
@@ -34,21 +28,8 @@ const lightRandomCircle = () => {
 	}while(randomNum === last_num);
 	last_num = randomNum;
 
-	//Switch case to change light and reset others to default settings
-	switch (randomNum) {
-		case 0:
-			addStyle(top_circle, 'red')
-			break;
-		case 1:
-			addStyle(middle_circle, 'yellow');
-			break;
-		case 2:
-			addStyle(bottom_circle, 'green')
-			break;
-		default:
-			console.log("Something went wrong with the randomNum");
-			break;
-	}
+	//Add style to indexed circle based on ordered array colors.
+	addStyle(circles[randomNum], colors[randomNum]);
 }
 
 //Adds style.  Expects circle object and color string.
@@ -88,5 +69,3 @@ const resetLights = () => {
 }
 
 resetButton.onclick = resetLights;
-
-
