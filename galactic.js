@@ -22,7 +22,20 @@ for(i = 0; i<numOfCircles;i++){
 	trafficBox.push(new light(circles[i], colors[i]))
 };
 
-console.log(trafficBox.circle)
+//Adds style.  Expects circle object and color string.
+const addStyle = (circle, color = '') => {
+	circle.style.backgroundColor = color;
+	circle.style.boxShadow = BOX_SHADOW_STYLE+color;
+}
+
+//Sets style of given circle to default.
+const resetStyle = circle => {
+	circle.style.backgroundColor = '';
+	circle.style.boxShadow = '';
+}
+
+//Returns random number between 0 and max circles
+const getRandomNum = () => Math.floor(Math.random()*numOfCircles);
 
 //Event handler function for light button click event
 const lightRandomCircle = () => {
@@ -43,24 +56,7 @@ const lightRandomCircle = () => {
 	addStyle(trafficBox[randomNum].circle, trafficBox[randomNum].color)
 }
 
-//Adds style.  Expects circle object and color string.
-const addStyle = (circle, color = '') => {
-	circle.style.backgroundColor = color;
-	circle.style.boxShadow = BOX_SHADOW_STYLE+color;
-}
-
-//Sets style of given circle to default.
-const resetStyle = circle => {
-	circle.style.backgroundColor = '';
-	circle.style.boxShadow = '';
-}
-
-//Returns random number between 0 and max circles
-const getRandomNum = () => Math.floor(Math.random()*numOfCircles);
-
-lightButton.onclick = lightRandomCircle;
-
-//Add event handler and listener for reset button
+//Add event handler for reset button
 const resetLights = () => {
 	for(var key in trafficBox) {
 		resetStyle(trafficBox[key].circle)
@@ -68,4 +64,6 @@ const resetLights = () => {
 	last_num = -1;
 }
 
+//Event listeners
+lightButton.onclick = lightRandomCircle;
 resetButton.onclick = resetLights;

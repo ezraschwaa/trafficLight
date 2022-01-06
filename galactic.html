@@ -14,7 +14,7 @@
 		<title>Galactic Light</title>
 	</head>
 
-	<body>
+	<body class = 'galactic'>
 		<header>
 			<div class = 'header-title'>Traffic Light Simulator</div>
 			<nav>
@@ -33,13 +33,20 @@
 		</div>
 
 		<!--Div to create buttons to click-->
-		<div id = 'lightButton' class = 'lightButton noselect'>
+		<div id = 'lightButton' class = 'lightButton noselect galaxy'>
 	      Click to turn on the Lights!
 	  	</div>
 
-	  	
+		<table class = 'adder-row'>
+			<tbody>
+				<tr>
+					<th class = 'adderButton noselect galaxy' id = 'addButton'>+</th>
+					<th class = 'adderButton noselect galaxy' id = 'subButton'>-</th>
+				</tr>
+			</tbody>
+		</table> 	
 
-	  	<div id = 'resetButton' class = 'resetButton noselect'>
+	  	<div id = 'resetButton' class = 'resetButton noselect galaxy'>
 	  	Reset
 	  	</div>
 
