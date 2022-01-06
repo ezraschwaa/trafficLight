@@ -10,8 +10,19 @@ let light_button = document.getElementById('lightButton');
 let resetButton = document.getElementById('resetButton');
 
 //create an object of circles:
-let trafficBox = {circles:colors}
-console.log(trafficBox)
+class light {
+	constructor(circle, color){
+		this.circle = circle;
+		this.color = color;
+	}
+}
+
+let trafficBox = [];
+for(i = 0; i<numOfCircles;i++){
+	trafficBox.push(new light(circles[i], colors[i]))
+};
+
+console.log(trafficBox.circle)
 
 //Event handler function for light button click event
 const lightRandomCircle = () => {
@@ -19,7 +30,7 @@ const lightRandomCircle = () => {
 
 	//Reset last circle lit if one exists
 	if(last_num !== -1){
-		resetStyle(circles[last_num])
+		resetStyle(trafficBox[last_num].circle)
 	}
 
 	//Generate random number and save it
@@ -29,7 +40,7 @@ const lightRandomCircle = () => {
 	last_num = randomNum;
 
 	//Change the color
-	addStyle(circles[randomNum], colors[randomNum])
+	addStyle(trafficBox[randomNum].circle, trafficBox[randomNum].color)
 }
 
 //Adds style.  Expects circle object and color string.
@@ -51,7 +62,9 @@ lightButton.onclick = lightRandomCircle;
 
 //Add event handler and listener for reset button
 const resetLights = () => {
-	circles.forEach(resetStyle);
+	for(var key in trafficBox) {
+		resetStyle(trafficBox[key].circle)
+	};
 	last_num = -1;
 }
 
