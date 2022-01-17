@@ -79,16 +79,14 @@ const lightRandomCircle = () => {
 
 //Add and subtract button event handlers
 const addLight = () => {
-	const newCircle = document.createElement("div");
-	newCircle.classList.add("circle");
-	trafficBox.push(new light(newCircle, getRandomColor()));
-	numOfCircles++;
-	trafficBoxElement.appendChild(newCircle);
-	let newHeight = TRAFFIC_BOX_HEIGHT_DEFAULT + (68*(trafficBox.length-3));
-	trafficBoxElement.style.height = `${newHeight}px`;
-
-	if (trafficBox.length > 5){
-		document.body.style.height = document.getElementById("body").clientHeight + 400;
+	if (trafficBox.length < 7){
+		const newCircle = document.createElement("div");
+		newCircle.classList.add("circle");
+		trafficBox.push(new light(newCircle, getRandomColor()));
+		numOfCircles++;
+		trafficBoxElement.appendChild(newCircle);
+		let newHeight = TRAFFIC_BOX_HEIGHT_DEFAULT + (68*(trafficBox.length-3));
+		trafficBoxElement.style.height = `${newHeight}px`;
 	}
 };
 
