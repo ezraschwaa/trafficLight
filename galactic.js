@@ -87,6 +87,8 @@ const addLight = () => {
 		trafficBoxElement.appendChild(newCircle);
 		let newHeight = TRAFFIC_BOX_HEIGHT_DEFAULT + (68*(trafficBox.length-3));
 		trafficBoxElement.style.height = `${newHeight}px`;
+	} else {
+		alert("Sorry, traffic lights have to have a maximum of 7 in this galaxy!");
 	}
 };
 
@@ -98,7 +100,8 @@ const subLight = () => {
 
 		let newHeight = TRAFFIC_BOX_HEIGHT_DEFAULT + (68*(trafficBox.length-3));
 		trafficBoxElement.style.height = `${newHeight}px`;
-
+	} else {
+		alert("Sorry, traffic lights have to have a minimum of 3 in this galaxy!");
 	}
 };
 
