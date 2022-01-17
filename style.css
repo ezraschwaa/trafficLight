@@ -9,6 +9,12 @@ body{
 	position:relative;
 }
 
+.galactic{
+	background-image: radial-gradient(
+		#cf60e0,
+		black);
+}
+
 /**Header stuff**/
 header{
 	width: 100%;
@@ -46,6 +52,10 @@ header li a:hover{
 .header-title{
 	font-family: 'Lobster';
 	color:black;
+}
+
+.galactic-header{
+	background-color: #94904E;
 }
 
 /**Table and Task-Title styling**/
@@ -130,6 +140,31 @@ header li a:hover{
 
 .resetButton:hover{
 	box-shadow: 2px 2px 3px 1px black;
+}
+
+.galaxy{
+	background-color: #31943F;
+}
+
+.adder-row{
+	margin: 10px auto;
+	text-align: center;
+}
+.adderButton{
+	height: 30px;
+	width: 50px;
+	margin: 20px;
+	border-radius: 10px;
+	font-size:36px;
+	cursor: pointer;
+}
+
+.adderButton:hover{
+	box-shadow: 2px 2px 3px 1px black;
+}
+
+.newLightsButton{
+	width: 100px;
 }
 
 /** This code is taken from Stack Overflow to prevent users
