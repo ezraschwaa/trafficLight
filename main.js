@@ -34,14 +34,12 @@ const lightRandomCircle = () => {
 
 //Adds style.  Expects circle object and color string.
 const addStyle = (circle, color = '') => {
-	circle.style.backgroundColor = color;
-	circle.style.boxShadow = BOX_SHADOW_STYLE+color;
+	circle.classList.add(color)
 }
 
 //Sets style of given circle to default.
 const resetStyle = circle => {
-	circle.style.backgroundColor = '';
-	circle.style.boxShadow = '';
+	circle.classList.remove(circle.classList[1])
 }
 
 //Returns random number between 0 and max circles
